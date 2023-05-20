@@ -48,6 +48,9 @@
     <ClCompile Include="general\customPrint.cpp">
       <Filter>Source Files\general</Filter>
     </ClCompile>
+    <ClCompile Include="matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="general\abstractFunctions.h">
@@ -87,6 +90,9 @@
       <Filter>Header Files\general</Filter>
     </ClInclude>
     <ClInclude Include="general\customPrint.h">
+      <Filter>Header Files\general</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix.h">
       <Filter>Header Files\general</Filter>
     </ClInclude>
   </ItemGroup>

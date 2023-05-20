@@ -137,6 +137,7 @@
     <ClCompile Include="general\statisticsUtility.cpp" />
     <ClCompile Include="general\stringUtility.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="matrix.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="general\abstractFunctions.h" />
@@ -152,6 +153,7 @@
     <ClInclude Include="general\statisticsUtility.h" />
     <ClInclude Include="general\stringUtility.h" />
     <ClInclude Include="general\vectorUtility.h" />
+    <ClInclude Include="matrix.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
