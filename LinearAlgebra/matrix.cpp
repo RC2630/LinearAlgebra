@@ -83,7 +83,7 @@ string Matrix::toString(int precision) {
     int rowStrSize = strRows.at(1).size();
     strRows.front() += strUtil::spaces(rowStrSize - 4) + "_";
 
-    return accumulate(strRows.begin(), strRows.end(), string(), [] (string rsf, string curr) {
+    return accumulate(strRows.begin(), strRows.end(), string("\n"), [] (string rsf, string curr) {
         return rsf + curr + "\n";
     });
 

@@ -51,6 +51,9 @@
     <ClCompile Include="matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="vector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="general\abstractFunctions.h">
@@ -93,7 +96,10 @@
       <Filter>Header Files\general</Filter>
     </ClInclude>
     <ClInclude Include="matrix.h">
-      <Filter>Header Files\general</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vector.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,7 +4,11 @@
 #include <vector>
 #include <string>
 
+#include "vector.h"
+
 using namespace std;
+
+struct Vector; // forward declaration
 
 struct Matrix {
 
