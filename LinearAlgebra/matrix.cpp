@@ -13,16 +13,16 @@ Matrix::Matrix(const vector<vector<double>>& entries) {
 }
 
 double& Matrix::operator () (int i, int j) {
-    return entries.at(i).at(j);
+    return entries.at(i - 1).at(j - 1);
 }
 
 vector<double>& Matrix::getRow(int i) {
-    return entries.at(i);
+    return entries.at(i - 1);
 }
 
 vector<double> Matrix::getColumn(int j) {
     return absFunc::map_f<vector<double>, double>(entries, [j] (const vector<double>& row) {
-        return row.at(j);
+        return row.at(j - 1);
     });
 }
 
@@ -48,29 +48,29 @@ output:  _                     _
 string Matrix::toString(int precision) {
     
     vector<int> columnMaxSizes;
-    for (int i = 0; i < numColumns(); i++) {
-        columnMaxSizes.push_back(strUtil::maxStringLength(absFunc::map_f<double, string>(getColumn(i), [precision] (const double& entry) {
+    for (int j = 1; j <= numColumns(); j++) {
+        columnMaxSizes.push_back(strUtil::maxStringLength(absFunc::map_f<double, string>(getColumn(j), [precision] (const double& entry) {
             return numUtil::roundToNplaces(to_string(entry), precision);
         })));
     }
 
     vector<string> strRows = {" _"};
-    for (int i = 0; i < numRows(); i++) {
+    for (int i = 1; i <= numRows(); i++) {
         
         string currRow;
 
-        if (i != numRows() - 1) {
+        if (i != numRows()) {
             currRow = "|    ";
         } else {
             currRow = "|_   ";
         }
 
-        for (int j = 0; j < numColumns(); j++) {
+        for (int j = 1; j <= numColumns(); j++) {
             string entryStr = numUtil::roundToNplaces(to_string(self(i, j)), precision);
-            currRow += strUtil::spaces(columnMaxSizes.at(j) - entryStr.size()) + entryStr + "   ";
+            currRow += strUtil::spaces(columnMaxSizes.at(j - 1) - entryStr.size()) + entryStr + "   ";
         }
 
-        if (i != numRows() - 1) {
+        if (i != numRows()) {
             currRow += " |";
         } else {
             currRow += "_|";

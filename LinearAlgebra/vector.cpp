@@ -9,7 +9,7 @@ Vector::Vector(const vector<double>& entries) {
 }
 
 double& Vector::operator [] (int i) {
-    return entries.at(i);
+    return entries.at(i - 1);
 }
 
 int Vector::size() {
