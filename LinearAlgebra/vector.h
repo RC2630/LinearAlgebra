@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 
+#include "general/randomUtility.h"
+
 #include "matrix.h"
 
 using namespace std;
@@ -11,6 +13,9 @@ using namespace std;
 struct Matrix; // forward declaration
 
 struct Vector {
+
+    static RandUtil& randUtil;
+    static Vector generateRandomVector(int size, int lower, int upper);
 
     vector<double> entries;
 
@@ -24,6 +29,19 @@ struct Vector {
     string toString(int precision = 2);
     Matrix toMatrix();
 
+    Vector operator + (Vector other);
+    Vector operator - (Vector other);
+
+    double operator * (Vector other); // dot product
+    Vector crossProduct(Vector other);
+    Matrix outerProduct(Vector other);
+
+    Vector operator += (Vector other);
+    Vector operator -= (Vector other);
+    Vector operator *= (double scalar);
+
 };
+
+Vector operator * (double scalar, Vector vector);
 
 #endif

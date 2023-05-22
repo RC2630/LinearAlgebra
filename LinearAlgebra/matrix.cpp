@@ -88,3 +88,52 @@ string Matrix::toString(int precision) {
     });
 
 }
+
+Matrix Matrix::operator + (Matrix other) {
+    // TODO
+    throw runtime_error("to be implemented");
+}
+
+Matrix Matrix::operator - (Matrix other) {
+    return self + (-1 * other);
+}
+
+Matrix Matrix::operator * (Matrix other) {
+    // TODO
+    throw runtime_error("to be implemented");
+}
+
+Matrix Matrix::operator += (Matrix other) {
+    self = self + other;
+    return self;
+}
+
+Matrix Matrix::operator -= (Matrix other) {
+    self = self - other;
+    return self;
+}
+
+Matrix Matrix::operator *= (Matrix other) {
+    self = self * other;
+    return self;
+}
+
+Matrix Matrix::operator *= (double scalar) {
+    self = scalar * self;
+    return self;
+}
+
+Matrix operator * (double scalar, Matrix matrix) {
+    // TODO
+    throw runtime_error("to be implemented");
+}
+
+Matrix Matrix::generateRandomMatrix(int m, int n, int lower, int upper) {
+    vector<vector<double>> randEntries = absFunc::makeList(m, absFunc::makeList<double>(n, 0));
+    for (vector<double>& row : randEntries) {
+        for (double& randEntry : row) {
+            randEntry = randUtil.randint(lower, upper);
+        }
+    }
+    return Matrix(randEntries);
+}
